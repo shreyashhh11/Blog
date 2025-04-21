@@ -1,5 +1,5 @@
 import React,{ useState ,useEffect}  from 'react';
-import { dispatch } from 'react-redux'
+import { useDispatch } from 'react-redux';
 import './App.css'
 import authService from './appwrite/auth';
 import { use } from 'react';
@@ -21,7 +21,7 @@ function App() {
         }
     })
     .finally( () => setLoading(false))
-  } ,[])
+  } ,[]);
 
 
   return !loading ? (
