@@ -1,3 +1,54 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  body {
+    @apply bg-app-bg text-app-text antialiased;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  *:focus-visible {
+    @apply outline-none ring-2 ring-app-accent ring-offset-2 ring-offset-app-bg;
+  }
+}
+
+@layer components {
+  .fade-in-up {
+    animation: fadeInUp 450ms ease both;
+  }
+
+  .article-content p {
+    @apply mb-4 text-base leading-8 text-app-text;
+  }
+
+  .article-content ul {
+    @apply mb-5 list-disc space-y-2 pl-6 text-app-text;
+  }
+
+  .article-content li {
+    @apply leading-7;
+  }
+
+  .article-content strong {
+    @apply font-semibold text-app-text;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

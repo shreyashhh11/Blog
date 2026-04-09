@@ -6,5 +6,14 @@ const conf = {
     appwriteBucketId: String(import.meta.env.VITE_APPWRITE_BUCKET_ID),
 }
 
+export const hasAuthConfig = Boolean(conf.appwriteUrl && conf.appwriteProjectId);
+export const hasContentConfig = Boolean(
+    conf.appwriteUrl &&
+    conf.appwriteProjectId &&
+    conf.appwriteDatabaseId &&
+    conf.appwriteCollectionId &&
+    conf.appwriteBucketId
+);
+
 
 export default conf
